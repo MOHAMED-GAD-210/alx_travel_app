@@ -1,3 +1,35 @@
+# listings app initialization
+from django.apps import AppConfig
+
+class ListingsConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'listings'
+from django.db import models
+
+# Models will be added in later milestones
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+class TestView(APIView):
+    def get(self, request):
+        return Response({"message": "Welcome to ALX Travel App API!"})
+    from django.urls import path
+from .views import TestView
+
+urlpatterns = [
+    path('', TestView.as_view(), name='test_view'),
+]
+
+
+
+
+
+
+
+
+
+
+
 from django.apps import AppConfig
 
 class ListingsConfig(AppConfig):
