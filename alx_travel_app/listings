@@ -24,6 +24,17 @@ urlpatterns = [
 
 
 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from django.urls import path
+
+class ListingsView(APIView):
+    def get(self, request):
+        return Response({"message": "ALX Travel App Listings Endpoint"})
+
+urlpatterns = [
+    path('', ListingsView.as_view(), name='listings'),
+]
 
 
 
